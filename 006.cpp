@@ -72,3 +72,8 @@
 //    
 //    return 0;
 //}
+
+//int;
+//char;
+//float;
+//bool;
