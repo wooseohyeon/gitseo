@@ -37,7 +37,7 @@
 
 //i가 20, k가 10이 되는게 목표
 //void swap(int i, int k) {
-//	int temp=0;
+//	int temp=0;    
 //
 //	temp = i;//temp=10
 //	i = k; //i에다가 k의 값을 넣는다. i가 20
