@@ -1,8 +1,8 @@
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <math.h>
-using namespace std;
+//#include <iostream>
+//#include <stdlib.h>
+//#include <time.h>
+//#include <math.h>
+//using namespace std;
 
 //인풋과 바디 출력
 //return 리턴뿐아니라 끝내고싶을때도 사용한다.
@@ -118,34 +118,34 @@ using namespace std;
 //int& ((참조)별명으로 부른다)//'RefA = A'; : 다른이름이다. 별명이기때문에 이름을 지정해줘야한다
 
 
-		//void Swap(char& A, char& B)
-		//{
-		//	char C = A;
-		//	A = B;
-		//	B = C;
-		//}
-
-		//// 실습  11
-		//// 문자열을 역순으로 반환하는 함수 구현
-		//void Reverse (char PtrCharacter[], int Size)
-		//{
-		//	for (int i = 0; i < Size / 2; i++)
-		//	{
-		//		char tmp = PtrCharacter[i];
-		//		PtrCharacter[i] = PtrCharacter[Size - 1 - i];
-		//		PtrCharacter[Size - 1 - i] = tmp;
-
-		//		// Swap(PtrCharacter[i], PtrCharacter[Size - 1 - i]);
-		//		cout << PtrCharacter[i] << ", " << PtrCharacter[Size - 1 - i] << endl;
-		//	}
-		//}
-		//char ArrayChar[] = { 'A', 'B', 'C', 'D', 'E' };
-		//Reverse (ArrayChar, 5);
-
-		//for (int i = 0; i < 5; i++)
-		//{
-		//	cout << *(ArrayChar + i) << endl;
-		//}
-
-
-	
+//void Swap(char& A, char& B)
+//{
+//    char C = A;
+//    A = B;
+//    B = C;
+//}
+//
+//// 실습  11
+//// 문자열을 역순으로 반환하는 함수 구현
+//void Reverse(char PtrCharacter[], int Size)
+//{
+//    for (int i = 0; i < Size / 2; i++)
+//    {
+//        char tmp = PtrCharacter[i];
+//        PtrCharacter[i] = PtrCharacter[Size - 1 - i];
+//        PtrCharacter[Size - 1 - i] = tmp;
+//
+//        // Swap(PtrCharacter[i], PtrCharacter[Size - 1 - i]);
+//        cout << PtrCharacter[i] << ", " << PtrCharacter[Size - 1 - i] << endl;
+//    }
+//}
+//int main()
+//{
+//    char ArrayChar[] = { 'A', 'B', 'C', 'D', 'E' };
+//    Reverse(ArrayChar, 5);
+//
+//    for (int i = 0; i < 5; i++)
+//    {
+//        cout << *(ArrayChar + i) << endl;
+//    }
+//}
