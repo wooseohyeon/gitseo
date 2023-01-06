@@ -33,6 +33,8 @@
     <ClCompile Include="012.cpp" />
     <ClCompile Include="013.cpp" />
     <ClCompile Include="014.cpp" />
+    <ClCompile Include="015.cpp" />
+    <ClCompile Include="016.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
