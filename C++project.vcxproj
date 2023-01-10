@@ -35,6 +35,16 @@
     <ClCompile Include="014.cpp" />
     <ClCompile Include="015.cpp" />
     <ClCompile Include="016.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Grid2D.cpp" />
+    <ClCompile Include="017.cpp" />
+    <ClCompile Include="018.cpp" />
+    <ClCompile Include="Player.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Grid2D.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
