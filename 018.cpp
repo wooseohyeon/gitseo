@@ -2,6 +2,7 @@
 #include "Grid2D.h"
 #include "Player.h"
 #include <windows.h>
+#include "Enemy.h"
 
 using namespace std;
 
@@ -14,19 +15,57 @@ void ShowConsoleCursor(bool Show)
     SetConsoleCursorInfo(Out, &CursorInfo);
 }
 
+//template<class T>
+//T AddT(T TA, T TB)
+//{
+//  return TA + TB;
+//}
+
+
+
+//void Add(int A, int B)
+//{
+//
+//}
+//void sub(int A, int B)
+//{
+//
+//}
+
 int main()
 {
+ 
+   
+
     ShowConsoleCursor(false);
 
     Grid2D Grid(20, 20);
-    Player MyPlayer("PlayerA", 2, 5);
-    Grid.SetPlayer(&MyPlayer);
-    Grid.Update();
-    Grid.Draw();
+    Player MyPlayer("*", 2, 5);
+
+    Grid.AddGameObject(&MyPlayer);
+
+    Enemy Monster("M", 5, 5);
+    Grid.AddGameObject(&Monster);
+
+   /* void (*FuncPtr)(int, int);
+    FuncPtr = &Add;
+    Add(1, 2);
+    void (*FuncPtr)(int, int);
+    FuncPtr = &sub;
+    (*FuncPtr)(1, 2);*/
+
+
+
+   /* cout << AddT<int>(1, 2) << endl;
+    cout << AddT<float>(1.1, 2.5) << endl;
+    cout << AddT<double>(1.5, 2) << endl;*/
+    //Grid.SetPlayer(&MyPlayer);
+ //   Grid.Update();
+    //Grid.Draw();
     
-    MyPlayer.Move(Direction::Left);
-    Grid.Update();
-    Grid.Draw();
+    //MyPlayer.Move(Direction::Left);
+   // Grid.Update();
+    //Grid.Draw();
 
 
     while (1)
@@ -47,12 +86,12 @@ int main()
         {
             MyPlayer.Move(Direction::Left);
         }
-        else if (GetKeyState("VK_Spaceber") & 0x8000)
+        else if (GetKeyState(VK_SPACE) & 0x8000)
         {
-            MyPlayer.
+            MyPlayer.Attack();
         }
-        Grid.Update();
-        Grid.Draw();
+        grid.update();
+        grid.draw();
 
     }
 }

@@ -36,6 +36,7 @@
     <ClCompile Include="015.cpp" />
     <ClCompile Include="016.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Grid2D.cpp" />
     <ClCompile Include="017.cpp" />
     <ClCompile Include="018.cpp" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Grid2D.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>

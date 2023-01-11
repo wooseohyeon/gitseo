@@ -1,6 +1,7 @@
 #include "Grid2D.h"
 #include<Windows.h>
 
+
 void ClearLastPosition()
 {
 	_COORD Last;
@@ -16,7 +17,11 @@ Grid2D::Grid2D()
 	{
 		Map[i] = new char[SizeY];
 	}
-	PtrEnemy = new Enemy * [MaxEnemy];
+	//PtrEnemy = new Enemy * [MaxEnemy];
+
+	//PtrEnemy =new Enmey *
+	NewMap = new GameObject * [MaxEnemy];
+
 }
 
 Grid2D::Grid2D(int SizeX, int SizeY)
@@ -30,7 +35,7 @@ Grid2D::Grid2D(int SizeX, int SizeY)
 		Map[i] = new char[SizeY];
 	}
 
-	PtrEnemy = new Enemy * [MaxEnemy];
+	NewMap = new GameObject * [MaxEnemy];
 }
 
 Grid2D::~Grid2D()
@@ -38,16 +43,31 @@ Grid2D::~Grid2D()
 
 }
 
-void Grid2D::SetPlayer(Player* PlayerA)
+GameObject* Grid2D::GetGameObject(int X, int Y)
 {
-	this->PlayerA = PlayerA;
-	PlayerA->SetBound(SizeX, SizeY);
-	//NormalPlayer = Player;
+	// (X, Y)에 적이 있으면 return
+	for (int i = 0; i < GameObjectVector.size(); i++)
+	{
+		if (GameObjectVector[i]->X == X && GameObjectVector[i]->Y == Y && GameObjectVector[i]->Id != "*")
+		{
+			return GameObjectVector[i];
+		}
+
+	}
+	return nullptr;
+}
+void Grid2D::AddGameObject(GameObject* GameObject)
+{
+	GameObjectVector.push_back(GameObject);
+	//NewMap[CurrentGameObject++] = GameObject;
+	GameObject->SetGrid(this);
+	//PtrEnemy[CurrentEnemy] = Enemy;
 }
 
-void Grid2D::AddEnemy(Enemy* Enemy)
+void Grid2D::RemoveGameObject(GameObject* GameObject)
 {
-	PtrEnemy[CurrentEnemy] = Enemy;
+	GameObjectVector.erase(std::remove(GameObjectVector.begin(), GameObjectVector.end(), GameObject), GameObjectVector.end());
+	//cout << "몹이 죽었습니다.";
 }
 
 void Grid2D::Update()
@@ -67,11 +87,13 @@ void Grid2D::Update()
 		}
 	}
 
-	Map[PlayerA->X][PlayerA->Y] = PlayerA->Id[0];
+	//Map[PlayerA->X][PlayerA->Y] = PlayerA->Id[0];
 
-	for (int i = 0; i < CurrentEnemy; i++)
+	for (int i = 0; i < GameObjectVector.size(); i++)
 	{
-		Map[PtrEnemy[i]->X][PtrEnemy[i]->Y] = PtrEnemy[i]->Id[0];
+		Map[GameObjectVector[i]->X][GameObjectVector[i]->Y] = GameObjectVector[i]->Id[0];
+		
+
 	}
 	//Map[NormalPlayer.X][NormalPlayer.Y] = NormalPlayer.Id[0];
 }
@@ -88,4 +110,14 @@ void Grid2D::Draw()
 		}
 		cout << endl;
 	}
+}
+
+int Grid2D::GetSizeX()
+{
+	return SizeX;
+}
+
+int Grid2D::GetSizeY()
+{
+	return SizeY;
 }
