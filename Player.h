@@ -17,7 +17,7 @@ public:
 	Player(string Id, int X, int Y);
 //	~Player();
 //
-//	//void SetBound(int SizeX, int SizeY);
+	//void SetBound(int SizeX, int SizeY);
 //	void SetGrid(Grid2D* Grid);
 //	void Move(Direction Direction);
 //	void Attack;
